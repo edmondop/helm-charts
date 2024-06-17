@@ -13,8 +13,6 @@ server:
           password: _PASSWORD_
           maxConns: 20
           maxConnLifetime: "1h"
-          connectAttributes:
-            tx_isolation: 'READ-COMMITTED'
 
       visibility:
         driver: "sql"
@@ -28,8 +26,6 @@ server:
           password: _PASSWORD_
           maxConns: 20
           maxConnLifetime: "1h"
-          connectAttributes:
-            tx_isolation: 'READ-COMMITTED'          
 
 cassandra:
   enabled: false
@@ -40,8 +36,13 @@ mysql:
 postgresql:
   enabled: false
 
+elasticsearch:
+  replicas: 1
+  minimumMasterNodes: 1
+
+
 schema:
   setup:
-    enabled: false
+    enabled: true
   update:
-    enabled: false
+    enabled: true
